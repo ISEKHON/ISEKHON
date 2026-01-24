@@ -197,9 +197,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
+const body = document.body;
 
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open on mobile
+    if (navMenu.classList.contains('active')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
     
     // Animate hamburger
     const spans = menuToggle.querySelectorAll('span');
@@ -218,11 +226,26 @@ menuToggle.addEventListener('click', () => {
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        body.style.overflow = '';
         const spans = menuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
     });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && 
+        !navMenu.contains(e.target) && 
+        !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        body.style.overflow = '';
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
 });
 
 // Navbar Scroll Effect
@@ -333,46 +356,69 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Cursor glow trail effect
-document.addEventListener('mousemove', (e) => {
-    const glow = document.createElement('div');
-    glow.style.cssText = `
-        position: fixed;
-        left: ${e.clientX - 10}px;
-        top: ${e.clientY - 10}px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: rgba(139, 92, 246, 0.5);
-        pointer-events: none;
-        filter: blur(8px);
-        z-index: 9999;
-        opacity: 1;
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    `;
-    
-    document.body.appendChild(glow);
-    
-    setTimeout(() => {
-        glow.style.opacity = '0';
-        glow.style.transform = 'scale(1.5)';
-    }, 10);
-    
-    setTimeout(() => {
-        glow.remove();
-    }, 600);
-});
+// Cursor glow trail effect (disabled on mobile/touch devices for better performance)
+const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-// Parallax Effect for Background Shapes
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const shapes = document.querySelectorAll('.shape');
+if (!isTouchDevice) {
+    let lastGlowTime = 0;
+    const glowThrottle = 30; // ms between glow effects for better performance
     
-    shapes.forEach((shape, index) => {
-        const speed = (index + 1) * 0.5;
-        shape.style.transform = `translateY(${scrolled * speed}px)`;
+    document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastGlowTime < glowThrottle) return;
+        lastGlowTime = now;
+        
+        const glow = document.createElement('div');
+        glow.style.cssText = `
+            position: fixed;
+            left: ${e.clientX - 10}px;
+            top: ${e.clientY - 10}px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.5);
+            pointer-events: none;
+            filter: blur(8px);
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        `;
+        
+        document.body.appendChild(glow);
+        
+        setTimeout(() => {
+            glow.style.opacity = '0';
+            glow.style.transform = 'scale(1.5)';
+        }, 10);
+        
+        setTimeout(() => {
+            glow.remove();
+        }, 600);
     });
-});
+}
+
+// Parallax Effect for Background Shapes (disabled on mobile for better performance)
+if (!isTouchDevice && window.innerWidth > 768) {
+    let ticking = false;
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                const shapes = document.querySelectorAll('.shape');
+                
+                shapes.forEach((shape, index) => {
+                    const speed = (index + 1) * 0.5;
+                    shape.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+                
+                ticking = false;
+            });
+            
+            ticking = true;
+        }
+    });
+}
 
 // Add active link highlighting
 window.addEventListener('scroll', () => {

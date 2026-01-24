@@ -24,6 +24,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -32,12 +33,27 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+}
+
+/* Prevent content overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Background Animation */
@@ -49,6 +65,7 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .shape {
@@ -57,6 +74,7 @@ body {
     filter: blur(80px);
     opacity: 0.3;
     animation: float 20s infinite ease-in-out;
+    will-change: transform;
 }
 
 .shape-1 {
@@ -958,18 +976,51 @@ section {
 }
 
 /* Responsive Design */
+/* Tablet and below (1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero-container {
+        gap: 3rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .about-content {
+        gap: 3rem;
+    }
+    
+    .image-wrapper {
+        height: 400px;
+    }
+}
+
+/* Mobile landscape and tablets (968px) */
 @media (max-width: 968px) {
     .nav-menu {
         position: fixed;
         top: 70px;
         right: -100%;
         width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 70px);
         background: rgba(10, 10, 15, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 2rem;
+        gap: 1.5rem;
         transition: right 0.3s ease;
-        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -978,11 +1029,22 @@ section {
 
     .menu-toggle {
         display: flex;
+        z-index: 1001;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-content {
+        order: 1;
+    }
+    
+    .hero-image {
+        order: 2;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
     .hero-title {
@@ -990,23 +1052,35 @@ section {
     }
 
     .hero-buttons {
-        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .hero-stats {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .about-content {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .footer-content {
@@ -1014,31 +1088,452 @@ section {
         gap: 1rem;
         text-align: center;
     }
+    
+    /* Improve touch targets for mobile */
+    .btn {
+        min-height: 48px;
+        padding: 0.875rem 1.75rem;
+    }
+    
+    .contact-method {
+        min-height: 70px;
+        padding: 1.25rem;
+    }
+    
+    .social-link {
+        width: 54px;
+        height: 54px;
+    }
 }
 
+/* Mobile portrait (768px) */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .hero {
+        padding: 80px 0 40px;
+        min-height: auto;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+    
+    .hero-description {
+        font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-stats {
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .image-wrapper {
+        height: 350px;
+    }
+    
+    .floating-card {
+        padding: 1rem;
+    }
+    
+    .floating-card svg {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .floating-card span {
+        font-size: 0.8rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .tech-category {
+        padding: 1.5rem;
+    }
+    
+    .tech-badges {
+        gap: 0.6rem;
+    }
+    
+    .tech-badge {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.8rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .project-content {
+        padding: 1.5rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px;
+    }
+    
+    /* Optimize background shapes for mobile */
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+    }
+    
+    .shape-2 {
+        width: 250px;
+        height: 250px;
+        bottom: -80px;
+        left: -80px;
+    }
+    
+    .shape-3 {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Small mobile (640px) */
 @media (max-width: 640px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-description {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
+    
+    .section-tag {
+        font-size: 0.8rem;
     }
 
     .hero-stats {
         gap: 1.5rem;
+        flex-direction: row;
     }
 
     .stat-number {
         font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .image-wrapper {
+        height: 300px;
+    }
+    
+    .floating-card {
+        padding: 0.8rem;
+    }
+    
+    .floating-card svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .floating-card span {
+        font-size: 0.7rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .about-text p {
+        font-size: 0.95rem;
+    }
+    
+    .info-item {
+        font-size: 0.9rem;
+    }
+    
+    .tech-category {
+        padding: 1.25rem;
+    }
+    
+    .tech-category-title {
+        font-size: 1rem;
+    }
+    
+    .tech-badge {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.75rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .project-content p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-method {
+        padding: 1rem;
+    }
+    
+    .method-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .method-label {
+        font-size: 0.8rem;
+    }
+    
+    .method-value {
+        font-size: 0.9rem;
+    }
+    
+    .social-link {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Very small mobile (480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .nav-container {
+        padding: 1rem 15px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .menu-toggle span {
+        width: 22px;
+    }
+    
+    section {
+        padding: 50px 0;
+    }
+    
+    .hero {
+        padding: 70px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero-stats {
+        gap: 1.2rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .image-wrapper {
+        height: 250px;
+    }
+    
+    /* Hide floating cards on very small screens for cleaner look */
+    .floating-card {
+        display: none;
+    }
+    
+    .about-image {
+        max-width: 250px;
+    }
+    
+    .about-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tech-stack {
+        gap: 1.5rem;
+    }
+    
+    .tech-category {
+        padding: 1rem;
+    }
+    
+    .tech-badges {
+        gap: 0.5rem;
+    }
+    
+    .tech-badge {
+        padding: 0.3rem 0.65rem;
+        font-size: 0.7rem;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .project-content {
+        padding: 1.25rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 60px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-stats {
+        display: none;
+    }
+    
+    .image-wrapper {
+        display: none;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+}
+
+/* Improve touch interactions for all mobile devices */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects on touch devices */
+    .nav-link::after {
+        display: none;
+    }
+    
+    /* Make interactive elements more touch-friendly */
+    .nav-link {
+        padding: 0.5rem 0;
+        display: block;
+    }
+    
+    .project-overlay {
+        opacity: 0.8;
+    }
+    
+    /* Ensure proper spacing for touch targets */
+    .tech-badge {
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    /* Disable cursor glow on touch devices */
+    body {
+        cursor: default;
     }
 }
