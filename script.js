@@ -44,9 +44,9 @@ const portfolioConfig = {
             link: '#'
         },
         {
-            title: 'E-Commerce Android App',
-            description: 'A modern shopping app with real-time inventory, secure payment integration using Razorpay, and smooth user experience with Jetpack Compose.',
-            tags: ['Kotlin', 'MVVM', 'Firebase'],
+            title: 'DrawableTuner',
+            description: 'A modern Android app for creating and designing gradient drawables with a beautiful Material 3 UI. Create complex shapes, gradients, and export them as XML code ready to use in your Android projects.',
+            tags: ['Kotlin', 'Jetpack Compose', 'Material3'],
             link: '#'
         },
         {
