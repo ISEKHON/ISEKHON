@@ -47,7 +47,7 @@ const portfolioConfig = {
             title: 'DrawableTuner',
             description: 'A modern Android app for creating and designing gradient drawables with a beautiful Material 3 UI. Create complex shapes, gradients, and export them as XML code ready to use in your Android projects.',
             tags: ['Kotlin', 'Jetpack Compose', 'Material3'],
-            link: '#'
+            link: 'https://github.com/ISEKHON/DrawableTuner'
         },
         {
             title: 'Real-Time Chat App',
