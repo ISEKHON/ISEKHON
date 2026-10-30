@@ -1,117 +1,160 @@
-# Hi there, I'm Jagdeep 👋
+<!-- Header -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8b5cf6,50:3b82f6,100:b8ff3c&height=220&section=header&text=Hey,%20I'm%20Jagdeep&fontSize=62&fontColor=ffffff&fontAlignY=36&desc=Building%20Android%20apps%20that%20feel%20alive&descSize=18&descAlignY=58&animation=fadeIn" width="100%" alt="Header" />
+</p>
 
-<div align="center">
-  
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=435&lines=Android+Developer;Mobile+App+Specialist;Frontend+%26+Backend+Developer;Learning+Web+Technologies)](https://git.io/typing-svg)
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=600&size=26&duration=2600&pause=900&color=B8FF3C&center=true&vCenter=true&width=600&lines=Android+Developer+%F0%9F%93%B1;Kotlin+%26+Jetpack+Compose+enthusiast;Frontend+%26+Backend+Developer;Learning+Next.js%2C+TypeScript+%26+AI+%F0%9F%A4%96;Always+learning%2C+always+building" alt="Typing SVG" />
+  </a>
+</p>
 
-![Profile Views](https://komarev.com/ghpvc/?username=isekhon&color=blueviolet&style=flat-square&label=Profile+Views)
+<p align="center">
+  <a href="https://www.linkedin.com/in/jagdeep-singh-224b62194/"><img src="https://img.shields.io/badge/LinkedIn-0a0a0b?style=for-the-badge&logo=linkedin&logoColor=b8ff3c" alt="LinkedIn" /></a>
+  <a href="https://twitter.com/isekhonn"><img src="https://img.shields.io/badge/Twitter-0a0a0b?style=for-the-badge&logo=x&logoColor=b8ff3c" alt="Twitter" /></a>
+  <a href="https://discord.com/users/442551893638512660"><img src="https://img.shields.io/badge/Discord-0a0a0b?style=for-the-badge&logo=discord&logoColor=b8ff3c" alt="Discord" /></a>
+  <a href="https://t.me/iSekhon"><img src="https://img.shields.io/badge/Telegram-0a0a0b?style=for-the-badge&logo=telegram&logoColor=b8ff3c" alt="Telegram" /></a>
+  <a href="mailto:jagdeepsekhonn@gmail.com"><img src="https://img.shields.io/badge/Email-0a0a0b?style=for-the-badge&logo=gmail&logoColor=b8ff3c" alt="Email" /></a>
+</p>
 
-</div>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=isekhon&color=8b5cf6&style=flat-square&label=PROFILE+VIEWS" alt="Profile views" />
+  <img src="https://img.shields.io/github/followers/isekhon?label=FOLLOWERS&style=flat-square&color=b8ff3c&labelColor=0a0a0b" alt="Followers" />
+  <img src="https://img.shields.io/badge/CODING%20SINCE-2020-3b82f6?style=flat-square&labelColor=0a0a0b" alt="Coding since 2020" />
+</p>
 
-## 🚀 About Me
+<br />
 
-- 🎓 **Computer Science Student** from India
-- 📱 **Android Developer** specialized in mobile app development
-- 💻 Building apps with **Java, Kotlin, XML & Jetpack Compose**
-- 🔧 Full-stack capabilities - proficient in both **Frontend & Backend** development
-- 🌐 Learning **Web Technologies** (Next.js, TypeScript, Vue)
-- 🤖 Interested in **AI** and emerging technologies
-- 🌟 Passionate about **open source contributions**
-- 👨‍💻 Coding since **2020**
-- 🔭 Currently working on **FalconGfx**
-- 📫 Reach me at **jagdeepsekhonn@gmail.com**
+## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28" alt="" /> About me
 
-## 🛠️ Tech Stack
+<table>
+<tr>
+<td width="58%" valign="top">
 
-### Languages
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+```kotlin
+data class Developer(
+    val name: String = "Jagdeep",
+    val location: String = "India 🇮🇳",
+    val role: String = "Android Developer",
+    val codingSince: Int = 2020,
+)
 
-### Mobile Development
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+object Me {
+    val dev = Developer()
 
-### Web Development
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+    val stack = listOf("Kotlin", "Java", "Jetpack Compose", "XML")
+    val alsoDoes = listOf("Frontend", "Backend")
+    val learning = listOf("Next.js", "TypeScript", "Vue", "AI")
+    val buildingNow = "FalconGfx 🦅"
 
-### Cloud & Database
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)
-![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?style=for-the-badge&logo=appwrite&logoColor=white)
+    val motto = "Always learning, always building, always growing"
+}
+```
 
-### Tools & DevOps
-![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+</td>
+<td width="42%" valign="top">
 
-### AI & ML
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
+- 🎓 **Computer Science student**
+- 📱 Crafting **Android apps** with Kotlin & Compose
+- 🔧 Comfortable on **frontend & backend**
+- 🌐 Exploring **Next.js, TypeScript & Vue**
+- 🤖 Curious about **AI** & emerging tech
+- 🌟 Big fan of **open source**
+- 🔭 Currently building **FalconGfx**
+- 📫 **jagdeepsekhonn@gmail.com**
 
-## 📊 GitHub Stats
+</td>
+</tr>
+</table>
 
-<div align="center">
-  
-![Jagdeep's GitHub Stats](https://github-readme-stats.vercel.app/api?username=isekhon&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
+## ⚡ Tech stack
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=isekhon&layout=compact&theme=tokyonight&hide_border=true)
+<table align="center">
+  <tr>
+    <td align="center" width="170"><b>Languages</b></td>
+    <td><img src="https://skillicons.dev/icons?i=kotlin,java,python,c,cpp,cs,js,ts,php&perline=9" alt="Languages" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Mobile</b></td>
+    <td><img src="https://skillicons.dev/icons?i=androidstudio,react&perline=9" alt="Mobile" />&nbsp;<img src="https://img.shields.io/badge/Android-0a0a0b?style=flat-square&logo=android&logoColor=3DDC84" alt="Android" />&nbsp;<img src="https://img.shields.io/badge/Jetpack%20Compose-0a0a0b?style=flat-square&logo=jetpackcompose&logoColor=4285F4" alt="Jetpack Compose" />&nbsp;<img src="https://img.shields.io/badge/React%20Native-0a0a0b?style=flat-square&logo=react&logoColor=61DAFB" alt="React Native" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Web</b></td>
+    <td><img src="https://skillicons.dev/icons?i=nextjs,react,vue,nodejs,spring&perline=9" alt="Web" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Cloud & DB</b></td>
+    <td><img src="https://skillicons.dev/icons?i=firebase,mongodb,postgres,mysql,sqlite,redis,vercel,appwrite&perline=9" alt="Cloud and databases" />&nbsp;<img src="https://img.shields.io/badge/Railway-0a0a0b?style=flat-square&logo=railway&logoColor=white" alt="Railway" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Tools</b></td>
+    <td><img src="https://skillicons.dev/icons?i=vscode,idea,postman,figma,docker,git,github&perline=9" alt="Tools" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>AI & ML</b></td>
+    <td><img src="https://img.shields.io/badge/Ollama-0a0a0b?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama" /></td>
+  </tr>
+</table>
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=isekhon&theme=tokyonight&hide_border=true)
+## 🚀 Featured projects
 
-</div>
+<table>
+<tr>
+<td width="33%" valign="top">
 
-## 🏆 GitHub Trophies
+### 🦅 FalconGfx
+An innovative graphics & design platform with powerful features and a modern UI/UX.
 
-<div align="center">
+![Status](https://img.shields.io/badge/status-in%20progress-8b5cf6?style=flat-square&labelColor=0a0a0b)
+<br />
+`Android` `Kotlin` `Compose`
 
-![Trophy](https://github-profile-trophy.vercel.app/?username=isekhon&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&column=7)
+</td>
+<td width="33%" valign="top">
 
-</div>
+### 🎨 [DrawableTuner](https://github.com/ISEKHON/DrawableTuner)
+Design gradient drawables with a Material 3 UI and export them as ready-to-use XML.
 
-## 📈 Contribution Graph
+![Status](https://img.shields.io/badge/status-open%20source-b8ff3c?style=flat-square&labelColor=0a0a0b)
+<br />
+`Kotlin` `Compose` `Material3`
 
-[![Jagdeep's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=isekhon&theme=tokyo-night&hide_border=true)](https://github.com/isekhon)
+</td>
+<td width="33%" valign="top">
 
-## 🤝 Connect with Me
+### 💬 Real-Time Chat
+Messaging app with Firebase realtime database, push notifications and media sharing.
 
-<div align="center">
+![Status](https://img.shields.io/badge/status-in%20progress-3b82f6?style=flat-square&labelColor=0a0a0b)
+<br />
+`Kotlin` `Firebase` `Material`
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jagdeep-singh-224b62194/)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/isekhonn)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/tedes)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/isekhon)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jagdeepsekhonn@gmail.com)
+</td>
+</tr>
+</table>
 
-</div>
+## 📊 GitHub stats
 
----
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=isekhon&theme=tokyonight" width="100%" alt="Profile summary" />
+</p>
 
-<div align="center">
-  
-### 💡 *"Always learning, always building, always growing"*
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=isekhon&theme=tokyonight" height="170" alt="Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=isekhon&theme=tokyonight" height="170" alt="Top languages" />
+</p>
 
-![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square)
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=isekhon&theme=tokyonight&hide_border=true&background=0a0a0b&ring=b8ff3c&fire=b8ff3c&currStreakNum=ffffff&currStreakLabel=b8ff3c&sideNums=ffffff&sideLabels=9a9aa2&dates=9a9aa2" alt="GitHub streak" />
+</p>
 
-</div>
+<br />
 
+<p align="center">
+  <i>“Always learning, always building, always growing.”</i>
+</p>
+
+<!-- Footer -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:b8ff3c,50:3b82f6,100:8b5cf6&height=120&section=footer" width="100%" alt="Footer" />
+</p>
